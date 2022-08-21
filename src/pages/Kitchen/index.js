@@ -1,7 +1,11 @@
+import NavBar from "../../components/Navbar";
 
 const Kitchen = () => {
     return(
-        <h1>Cozinha</h1>
+        <>
+            <NavBar/>
+            <h1>Cozinha</h1>
+        </>
     )
 }
 

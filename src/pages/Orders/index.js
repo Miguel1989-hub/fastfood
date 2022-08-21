@@ -1,6 +1,13 @@
+import NavBar from "../../components/Navbar";
+
+
+
 const Orders = () => {
-    return(
-        <h1>Pedidos</h1>
+    return (
+        <>
+            <NavBar />
+            <h1>Pedidos</h1>
+        </>
     )
 }
 

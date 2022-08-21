@@ -1,6 +1,11 @@
+import NavBar from "../../components/Navbar";
+
 const Production = () => {
-    return(
-        <h1>saida</h1>
+    return (
+        <>
+            <NavBar />
+            <h1>saida</h1>
+        </>
     )
 }
 

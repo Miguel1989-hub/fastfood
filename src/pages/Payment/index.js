@@ -1,6 +1,11 @@
+import NavBar from "../../components/Navbar";
+
 const Payment = () => {
-    return(
-        <h1>Pagamento</h1>
+    return (
+        <>
+            <NavBar />
+            <h1>Pagamento</h1>
+        </>
     )
 }
 
