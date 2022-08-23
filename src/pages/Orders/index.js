@@ -1,8 +1,15 @@
-import { Typography, TextField, Container, Stack, Box } from "@mui/material";
+import { Typography, TextField, Container, Stack, Box, Button, styled } from "@mui/material";
 import CardCategories from "../../components/CardCategories";
 import NavBar from "../../components/Navbar";
 import { images } from "../../assets";
 import CardProducts from "../../components/CardProducts/CardProducts";
+import { Link } from "react-router-dom";
+
+
+const LinkPay = styled(Link)(({ theme }) => ({
+    textDecoration: "none",
+    color: "white",
+}));
 
 
 
@@ -69,7 +76,10 @@ const Orders = () => {
                     <CardProducts />
                     <CardProducts />
                 </Box>
-
+                <Stack sx={{margin: "3rem 0"}} justifyContent="flex-end" direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }}>
+                   <Button variant="outlined" sx={{width: "230px", borderRadius: "8px"}}>Cancelar</Button>
+                   <Button variant="contained" sx={{width: "230px",  borderRadius: "8px"}}><LinkPay  to="./pagamento">Finalizar pedido</LinkPay></Button>
+                </Stack>
             </Container>
         </>
     )
