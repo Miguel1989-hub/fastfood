@@ -1,14 +1,12 @@
-import { Paper, styled, Typography, CardMedia } from "@mui/material";
+import { Paper,Typography, CardMedia } from "@mui/material";
 
 
 const CardCategories = ({ name, images, width, height }) => {
     return (
-        <Paper sx={{ height: "140px", width: "160px"}}>
+        <Paper sx={{ height: "110px", width: "180px"}}>
             <CardMedia
                 component="img" 
                 alt="hamburguer e fritas"
-                height={width}
-                width={height}
                 image={images}
                 sx={{textAlign: "center"}}
             />

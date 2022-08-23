@@ -1,7 +1,8 @@
-import { Typography, TextField, Container, Stack } from "@mui/material";
+import { Typography, TextField, Container, Stack, Box } from "@mui/material";
 import CardCategories from "../../components/CardCategories";
 import NavBar from "../../components/Navbar";
 import { images } from "../../assets";
+import CardProducts from "../../components/CardProducts/CardProducts";
 
 
 
@@ -36,14 +37,40 @@ const Orders = () => {
                 >
                     Navegue por categoria
                 </Typography>
-                <Stack direction="row" sx={{justifyContent: "space-between", marginTop: "1rem"}}>
-                    <CardCategories name="Combos" width="100px" height="100px" images={images.combo} />
-                    <CardCategories name="Acompanhamentos"  width="100px" height="100px" images={images.fries} />
-                    <CardCategories name="Bebidas" width="100px" height="100px" images={images.coca} />
-                    <CardCategories name="Sobremesas"  width="100px" height="100px" images={images.iceCream} />
+                <Stack direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }} sx={{ alignItems: { xs: "center" }, justifyContent: "space-between", marginTop: "1rem" }}>
+                    <CardCategories name="Combos" images={images.combo} />
+                    <CardCategories name="Acompanhamentos" images={images.fries} />
+                    <CardCategories name="Bebidas" images={images.coca} />
+                    <CardCategories name="Sobremesas" images={images.iceCream} />
                 </Stack>
-            </Container>
+                <Typography
+                    variant="h6"
+                    sx={{ fontWeight: "bold", marginTop: "3rem" }}
+                >
+                    Produtos
+                </Typography>
+                <Typography
+                    variant="body2"
+                    sx={{ marginTop: "0.3rem" }}
+                >
+                    Selecione um produto para adicionar ao seu pedido
+                </Typography>
+                <Box sx={{ display: "flex", justifyContent:{xs: "center", sm: "space-between"}, flexWrap: "wrap" }}>
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                    <CardProducts />
+                </Box>
 
+            </Container>
         </>
     )
 }
