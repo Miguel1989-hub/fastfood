@@ -1,10 +1,90 @@
+import { Container, Stack, Box, Divider, Typography, TextField, Radio, Button } from "@mui/material";
 import NavBar from "../../components/Navbar";
 
 const Payment = () => {
     return (
         <>
             <NavBar />
-            <h1>Pagamento</h1>
+            <Container maxWidth="md">
+                <Stack
+                    direction="row"
+                    sx={{ marginTop: "3rem", paddingRight: "2rem" }}
+                >
+                    <Box sx={{ width: "50%" }}>
+                        <Typography
+                            variant="h5"
+                            sx={{ fontWeight: "bold", letterSpacing: "1px" }}
+                        >
+                            Pagamento:
+                        </Typography>
+                        <Typography
+                            variant="body2"
+                            sx={{ fontWeight: "bold", letterSpacing: "1px", marginTop: "2rem" }}
+                        >
+                            Resumo da compra
+                        </Typography>
+                        <Box sx={{ border: "solid 0.5px", borderColor: "#d3d3d3", borderRadius: "4px", marginTop: "1rem" }}>
+                            <Stack
+                                direction="column"
+                                divider={<Divider variant="inset" sx={{ width: "70%", border: "dashed 0.5px", borderColor: "#d3d3d3" }} />}
+                            >
+                                <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ width: "70%", padding: "1rem", margin: "2px auto" }}>
+                                    <Typography variant="body1" >1x smash da casa</Typography>
+                                    <Typography variant="body1" >R$ 30,50</Typography>
+                                </Stack>
+                                <Stack direction="row" alignItems="center" justifyContent="space-between" sx={{ width: "70%", padding: "1rem", margin: "2px auto" }}>
+                                    <Typography variant="body1" >Total do pedido:</Typography>
+                                    <Typography variant="h5" sx={{ fontWeight: "bold" }} >R$ 30,50</Typography>
+                                </Stack>
+                            </Stack>
+                        </Box>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: "1rem", width: "100%" }}>
+                            <Stack direction="column" sx={{ width: "70%" }}>
+                                <Typography variant="body2" sx={{ fontWeight: "bold" }} >Nome do cliente</Typography>
+                                <TextField hiddenLabel variant="filled" size="small" />
+                            </Stack>
+                            <Stack direction="column" justifyContent="space-between" sx={{ width: "15%" }}>
+                                <Typography variant="body2" sx={{ fontWeight: "bold" }} >Código:</Typography>
+                                <TextField hiddenLabel variant="filled" size="small" />
+                            </Stack>
+                        </Stack>
+                    </Box>
+                    <Box sx={{ width: "50%", paddingLeft: "5rem" }}>
+                        <Typography
+                            variant="body2"
+                            sx={{ fontWeight: "bold", letterSpacing: "1px", marginTop: "4rem" }}
+                        >
+                            Selecione a forma de pagamento:
+                        </Typography>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ border: "solid 0.5px", borderRadius: "4px", borderColor: "#d3d3d3", padding: "0.8rem", width: "100%", marginTop: "10px" }}>
+                            <Typography variant="body1" sx={{ fontWeight: "bold" }}>Débito</Typography>
+                            <Radio size="small" />
+                        </Stack>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ border: "solid 0.5px", borderRadius: "4px", borderColor: "#d3d3d3", padding: "0.8rem", width: "100%", marginTop: "10px" }}>
+                            <Typography variant="body1" sx={{ fontWeight: "bold" }}>Crédito</Typography>
+                            <Radio size="small" />
+                        </Stack>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ border: "solid 0.5px", borderRadius: "4px", borderColor: "#d3d3d3", padding: "0.8rem", width: "100%", marginTop: "10px" }}>
+                            <Typography variant="body1" sx={{ fontWeight: "bold" }}>Dinheiro</Typography>
+                            <Radio size="small" />
+                        </Stack>
+                        <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: "1rem", width: "100%" }}>
+                    <Stack direction="column" sx={{ width: "45%" }}>
+                        <Typography variant="body2" sx={{ fontWeight: "bold" }} >Valor entregue:</Typography>
+                        <TextField hiddenLabel variant="filled" size="small" />
+                    </Stack>
+                    <Stack direction="column" justifyContent="space-between" sx={{ width: "45%" }}>
+                        <Typography variant="body2" sx={{ fontWeight: "bold" }} >Troco:</Typography>
+                        <TextField hiddenLabel variant="filled" size="small" />
+                    </Stack>
+                </Stack>
+                    </Box>
+                </Stack>
+                <Stack sx={{ margin: "3rem 0" }} justifyContent="flex-end" direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }}>
+                    <Button variant="outlined" sx={{ width: "230px", borderRadius: "16px" }}>Cancelar</Button>
+                    <Button variant="contained" sx={{ width: "230px", borderRadius: "16px" }}>Finalizar pedido</Button>
+                </Stack>
+            </Container >
         </>
     )
 }
