@@ -8,10 +8,10 @@ const Payment = () => {
             <NavBar />
             <Container maxWidth="md">
                 <Stack
-                    direction="row"
+                    direction={{sx: "column", sm:"row"}}
                     sx={{ marginTop: "3rem", paddingRight: "2rem" }}
                 >
-                    <Box sx={{ width: "50%" }}>
+                    <Box sx={{ width:{xs: "100%", sm:"50%" }}}>
                         <Typography
                             variant="h5"
                             sx={{ fontWeight: "bold", letterSpacing: "1px" }}
@@ -50,7 +50,7 @@ const Payment = () => {
                             </Stack>
                         </Stack>
                     </Box>
-                    <Box sx={{ width: "50%", paddingLeft: "5rem" }}>
+                    <Box sx={{ paddingLeft:{xs:"0", sm:"5rem" }, width:{xs: "100%", sm:"50%" }}}>
                         <Typography
                             variant="body2"
                             sx={{ fontWeight: "bold", letterSpacing: "1px", marginTop: "4rem" }}
@@ -81,7 +81,7 @@ const Payment = () => {
                         </Stack>
                     </Box>
                 </Stack>
-                <Stack sx={{ margin: "3rem 0" }} justifyContent="flex-end" direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }}>
+                <Stack sx={{ margin: "3rem 0" }} justifyContent={{xs:"center", sm:"flex-end"}} alignItems={{xs: "center"}} direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }}>
                     <Button variant="outlined" sx={{ width: "230px", borderRadius: "16px" }}>Cancelar</Button>
                     <ModalConfirm />
                 </Stack>
