@@ -1,4 +1,5 @@
 import { Container, Stack, Box, Divider, Typography, TextField, Radio, Button } from "@mui/material";
+import ModalConfirm from "../../components/ModalConfirm";
 import NavBar from "../../components/Navbar";
 
 const Payment = () => {
@@ -69,20 +70,20 @@ const Payment = () => {
                             <Radio size="small" />
                         </Stack>
                         <Stack direction="row" justifyContent="space-between" alignItems="center" sx={{ marginTop: "1rem", width: "100%" }}>
-                    <Stack direction="column" sx={{ width: "45%" }}>
-                        <Typography variant="body2" sx={{ fontWeight: "bold" }} >Valor entregue:</Typography>
-                        <TextField hiddenLabel variant="filled" size="small" />
-                    </Stack>
-                    <Stack direction="column" justifyContent="space-between" sx={{ width: "45%" }}>
-                        <Typography variant="body2" sx={{ fontWeight: "bold" }} >Troco:</Typography>
-                        <TextField hiddenLabel variant="filled" size="small" />
-                    </Stack>
-                </Stack>
+                            <Stack direction="column" sx={{ width: "45%" }}>
+                                <Typography variant="body2" sx={{ fontWeight: "bold" }} >Valor entregue:</Typography>
+                                <TextField hiddenLabel variant="filled" size="small" />
+                            </Stack>
+                            <Stack direction="column" justifyContent="space-between" sx={{ width: "45%" }}>
+                                <Typography variant="body2" sx={{ fontWeight: "bold" }} >Troco:</Typography>
+                                <TextField hiddenLabel variant="filled" size="small" />
+                            </Stack>
+                        </Stack>
                     </Box>
                 </Stack>
                 <Stack sx={{ margin: "3rem 0" }} justifyContent="flex-end" direction={{ xs: 'column', sm: 'row' }} spacing={{ xs: 2 }}>
                     <Button variant="outlined" sx={{ width: "230px", borderRadius: "16px" }}>Cancelar</Button>
-                    <Button variant="contained" sx={{ width: "230px", borderRadius: "16px" }}>Finalizar pedido</Button>
+                    <ModalConfirm />
                 </Stack>
             </Container >
         </>
